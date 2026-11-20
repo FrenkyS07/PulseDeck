@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.container-deck {
+    width: 100vw;
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+}
+
+.sidebar-deck {
+    background-color: #1b263b;
+    border-right: solid 2px #3b4251;
+    padding: 1rem;
+    height: 100vh;
+    display: flex;
+}
+
+/* 
+=====================================
+*/
+
+.main__deck {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+    /* background-color: #001d3d; */
+}
+
+.deck__content4 {
+    grid-row-start: 2;
+}
+
+.deck__content5 {
+    grid-column: span 2 / span 2;
+    grid-row-start: 2;
+}
+
+.deck__content6 {
+    grid-row-start: 3;
+}
+
+.deck__content7 {
+    grid-row-start: 3;
+}
+
+.deck__content8 {
+    grid-row-start: 3;
+}
+
+.deck__content:nth-child(even) {
+    background-color: red;
+}
+
+.deck__content:nth-child(odd) {
+    background-color: blue;
+}
+
+/* 
+==================================
+*/
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar__logo {
+    color: #fff;
+    display: flex;
+    flex-direction: rows;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar__logo span {
+    color: #48cae4;
+}
+
+.navbar__items {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    width: 200px;
+    color: #fff;
+    transition: transform 0.2s ease;
+}
+
+.navbar__items:hover {
+    background-color: #31405c;
+    border-radius: 10px;
+    box-shadow: 3px 0 2px 0 #59a3d4;
+}
+
+.navbar__items:active {
+    transform: scale(0.95);
+}
+
+.navbar__items--active {
+    background-color: #27475c;
+    border-radius: 10px;
+    box-shadow: 3px 0 2px 0 #fff;
+}
+
+.navbar__items img {
+    width: 25px;
+    height: auto;
+}
+
+.navbar__items span {
+    margin-left: 1rem;
+}
+
+.navbar__items a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.items__account {
+    border-top: 1px solid #5d687e;
+    margin-top: auto;
+}
