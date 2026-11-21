@@ -15,14 +15,14 @@
                 <div class="navbar__logo">
                     <p>PULSE<span>DECK</span></p>
                 </div>
-                <div class="navbar__items navbar__items--active">
-                    <a href="index.html">
+                <div class="navbar__items navbar__items--active" id="nav-dashboard">
+                    <a href="#dashboard" onclick="route()">
                         <img src="img/menu-white.png" alt="Dashboard">
                         <span>Dashboard</span>
                     </a>
                 </div>
                 <div class="navbar__items">
-                    <a href="downloads.html">
+                    <a href="#downloads">
                         <img src="img/download-white.png" alt="Downloads">
                         <span>Downloads</span>
                     </a>
@@ -62,17 +62,28 @@
             </nav>
         </div>
         <div class="main__deck">
-            <div class="deck__content deck__content1"></div>
-            <div class="deck__content deck__content2"></div>
-            <div class="deck__content deck__content3"></div>
-            <div class="deck__content deck__content4"></div>
-            <div class="deck__content deck__content5"></div>
-            <div class="deck__content deck__content6"></div>
-            <div class="deck__content deck__content7"></div>
-            <div class="deck__content deck__content8"></div>
+            <navbar class="main__navbar">
+                <div class="deck__search">
+                    <input type="search" name="search" id="search" placeholder="Search server, files, or servies">
+                </div>
+                <div class="deck__notification"></div>
+                <div class="deck__mode">
+                    <div class="dark__mode mode--active"><span>Dark</span></div>
+                    <div class="light__mode"><span>Light</span></div>
+                </div>
+            </navbar>
+            <!-- <div class="deck__container">
+                <div class="deck__content" style="grid-area: deck-1;"></div>
+                <div class="deck__content" style="grid-area: deck-2;"></div>
+                <div class="deck__content" style="grid-area: deck-3;"></div>
+                <div class="deck__content" style="grid-area: deck-4;"></div>
+                <div class="deck__content" style="grid-area: deck-5;"></div>
+                <div class="deck__content" style="grid-area: deck-6;"></div>
+                <div class="deck__content" style="grid-area: deck-7;"></div>
+            </div> -->
         </div>
     </div>
-    <script src="javascript/app.js"></script>
+    <script type="module" src="javascript/app.js"></script>
 </body>
 
 </html>

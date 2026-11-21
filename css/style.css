@@ -10,6 +10,10 @@ body {
     height: 100%;
 }
 
+/* 
+============= MAIN STRUCTURE ==============
+*/
+
 .container-deck {
     width: 100vw;
     height: 100dvh;
@@ -25,50 +29,13 @@ body {
     display: flex;
 }
 
-/* 
-=====================================
-*/
-
 .main__deck {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    gap: 8px;
-    /* background-color: #001d3d; */
+    padding: 0.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #001d3d;
 }
-
-.deck__content4 {
-    grid-row-start: 2;
-}
-
-.deck__content5 {
-    grid-column: span 2 / span 2;
-    grid-row-start: 2;
-}
-
-.deck__content6 {
-    grid-row-start: 3;
-}
-
-.deck__content7 {
-    grid-row-start: 3;
-}
-
-.deck__content8 {
-    grid-row-start: 3;
-}
-
-.deck__content:nth-child(even) {
-    background-color: red;
-}
-
-.deck__content:nth-child(odd) {
-    background-color: blue;
-}
-
-/* 
-==================================
-*/
 
 .navbar {
     display: flex;
@@ -79,7 +46,7 @@ body {
 .navbar__logo {
     color: #fff;
     display: flex;
-    flex-direction: rows;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
@@ -133,4 +100,59 @@ body {
 .items__account {
     border-top: 1px solid #5d687e;
     margin-top: auto;
+}
+
+
+.deck__search input{
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #515b70;
+    padding: 0.5rem;
+    background-color: #384f79;
+    color: #fff;
+}
+
+.deck__search input::placeholder {
+    color: #fff;
+}
+
+.main__navbar {
+    display: flex;
+}
+
+.deck__mode {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 1em;
+    padding: 0.2em;
+    border-radius: 13px;
+    /* background-color: #48cae4; */
+}
+
+.deck__mode {
+    color: #fff;
+}
+
+/* 
+=========== DASHBOARD LAYOUT ==============
+*/
+
+.deck__container {
+    flex: 1;
+    display: grid;
+    margin-top: 1em;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1em;
+    grid-template-areas: 
+    "deck-1 deck-2 deck-3"
+    "deck-4 deck-5 deck-5"
+    "deck-6 deck-6 deck-7";
+}
+
+.deck__content {
+    background-color: #48cae4;
+    border-radius: 10px;
 }
