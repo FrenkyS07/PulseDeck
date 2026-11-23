@@ -16,71 +16,110 @@
                     <p>PULSE<span>DECK</span></p>
                 </div>
                 <div class="navbar__items navbar__items--active" id="nav-dashboard">
-                    <a href="#dashboard" onclick="route()">
-                        <img src="img/menu-white.png" alt="Dashboard">
+                    <a href="#dashboard">
+                        <svg class="nav-icon" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor"
+                                d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
+                        </svg>
                         <span>Dashboard</span>
                     </a>
                 </div>
                 <div class="navbar__items">
                     <a href="#downloads">
-                        <img src="img/download-white.png" alt="Downloads">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-arrow-down-to-line preview-icon">
+                            <path d="M12 17V3" />
+                            <path d="m6 11 6 6 6-6" />
+                            <path d="M19 21H5" />
+                        </svg>
                         <span>Downloads</span>
                     </a>
                 </div>
                 <div class="navbar__items">
-                    <a href="mediaPlayer.html">
-                        <img src="img/youtube.png" alt="Media Player">
+                    <a href="#mediaPlayer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-square-play preview-icon">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path
+                                d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z" />
+                        </svg>
                         <span>Media Player</span>
                     </a>
                 </div>
                 <div class="navbar__items">
-                    <a href="storage.html">
-                        <img src="img/database.png" alt="Storage">
+                    <a href="#storage">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-database preview-icon">
+                            <ellipse cx="12" cy="5" rx="9" ry="3" />
+                            <path d="M3 5V19A9 3 0 0 0 21 19V5" />
+                            <path d="M3 12A9 3 0 0 0 21 12" />
+                        </svg>
                         <span>Storage</span>
                     </a>
                 </div>
                 <div class="navbar__items">
-                    <a href="automation.html">
-                        <img src="img/automation.png" alt="Automation">
+                    <a href="#automation">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-route-arrow-right preview-icon">
+                            <path d="m18 22 3-3-3-3" />
+                            <path d="M9 5h8.5a1 1 0 010 7h-11a1 1 0 000 7H21" />
+                            <circle cx="6" cy="5" r="3" />
+                        </svg>
                         <span>Automation</span>
                     </a>
                 </div>
                 <div class="navbar__items">
-                    <a href="setting.html">
-                        <img src="img/settings.png" alt="Settings">
+                    <a href="#setting">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-settings preview-icon">
+                            <path
+                                d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
                         <span>Settings</span>
                     </a>
                 </div>
-                <div class="navbar__items items__account">
-                    <img src="img/profile-picture.png" alt="default-picture">
-                    <span>Admin</span>
-                    <!-- 
+            </nav>
+            <div class="navbar__items items__account">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-user preview-icon">
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                </svg>
+                <span>Admin</span>
+                <!-- 
                     option signout dibuat pakai popout kecil diatas account dengan ada tanda tombol signout
                     buatkan kayak hover
                     -->
-                </div>
-            </nav>
+            </div>
         </div>
         <div class="main__deck">
             <navbar class="main__navbar">
                 <div class="deck__search">
                     <input type="search" name="search" id="search" placeholder="Search server, files, or servies">
                 </div>
-                <div class="deck__notification"></div>
-                <div class="deck__mode">
-                    <div class="dark__mode mode--active"><span>Dark</span></div>
-                    <div class="light__mode"><span>Light</span></div>
+                <div class="navbar__tools">
+                    <div class="deck__notification">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-bell preview-icon">
+                            <path d="M10.268 21a2 2 0 0 0 3.464 0" />
+                            <path
+                                d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
+                        </svg>
+                    </div>
+                    <div class="deck__mode">
+                        <div class="dark__mode mode--active" data-mode="dark"><span>Dark</span></div>
+                        <div class="light__mode" data-mode="light"><span>Light</span></div>
+                    </div>
                 </div>
             </navbar>
-            <!-- <div class="deck__container">
-                <div class="deck__content" style="grid-area: deck-1;"></div>
-                <div class="deck__content" style="grid-area: deck-2;"></div>
-                <div class="deck__content" style="grid-area: deck-3;"></div>
-                <div class="deck__content" style="grid-area: deck-4;"></div>
-                <div class="deck__content" style="grid-area: deck-5;"></div>
-                <div class="deck__content" style="grid-area: deck-6;"></div>
-                <div class="deck__content" style="grid-area: deck-7;"></div>
-            </div> -->
         </div>
     </div>
     <script type="module" src="javascript/app.js"></script>

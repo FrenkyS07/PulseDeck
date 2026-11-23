@@ -25,7 +25,7 @@ export function renderDashboard(){
     </div>
 
     <div class="deck__content" style="grid-area: deck-7;">
-    Automation Log
+    <span>Automation Log</span>
     </div>
     `;
 }

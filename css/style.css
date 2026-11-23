@@ -1,19 +1,48 @@
-* {
-    box-sizing: border-box;
-    padding: 0;
+*{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --bg-main: #001d3d;
+    --bg-sidebar: #1b263b;
+    --bg-card: #48cae4;
+    --bg-input: #384f79;
+    --border-color: #3b4251;
+    --text-color: #ffffff;
+    --text-dark: #0f172a;
+    --accent-color: #48cae4;
+    --hover-sidebar: #31405c;
+    --active-sidebar: #27475c;
+}
+
+/* Jika nanti di-switch ke Light Mode (Contoh implementasi) */
+body.light-mode {
+    --bg-main: #f0f4f8;
+    --bg-sidebar: #ffffff;
+    --bg-card: #ffffff;
+    --bg-input: #e2e8f0;
+    --border-color: #cbd5e1;
+    --text-color: #1e293b;
+    --text-dark: #ffffff;
+    --hover-sidebar: #f1f5f9;
+    --active-sidebar: #e2e8f0;
 }
 
 html,
 body {
     width: 100%;
     height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-color);
 }
 
-/* 
-============= MAIN STRUCTURE ==============
-*/
-
+/* ==========================================
+   MAIN STRUCTURE (LAYOUT UTAMA)
+========================================== */
 .container-deck {
     width: 100vw;
     height: 100dvh;
@@ -22,52 +51,68 @@ body {
 }
 
 .sidebar-deck {
-    background-color: #1b263b;
-    border-right: solid 2px #3b4251;
+    background-color: var(--bg-sidebar);
+    border-right: solid 2px var(--border-color);
     padding: 1rem;
     height: 100vh;
     display: flex;
+    flex-direction: column;
 }
 
 .main__deck {
-    padding: 0.5rem;
+    padding: 1rem;
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #001d3d;
+    background-color: var(--bg-main);
+    overflow-y: auto;
 }
 
+/* ==========================================
+   SIDEBAR & NAVBAR NAVIGATION
+========================================== */
 .navbar {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .navbar__logo {
-    color: #fff;
+    color: var(--text-color);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
 }
 
 .navbar__logo span {
-    color: #48cae4;
+    color: var(--accent-color);
+}
+
+.nav-icon {
+    width: 25px;
+    height: 25px;
+    color: var(--text-color); 
 }
 
 .navbar__items {
     display: flex;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     padding: 0.5rem;
-    width: 200px;
-    color: #fff;
-    transition: transform 0.2s ease;
+    width: 100%;
+    max-width: 200px;
+    color: var(--text-color);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    border-radius: 10px;
 }
 
 .navbar__items:hover {
-    background-color: #31405c;
-    border-radius: 10px;
+    background-color: var(--hover-sidebar);
     box-shadow: 3px 0 2px 0 #59a3d4;
 }
 
@@ -76,9 +121,8 @@ body {
 }
 
 .navbar__items--active {
-    background-color: #27475c;
-    border-radius: 10px;
-    box-shadow: 3px 0 2px 0 #fff;
+    background-color: var(--active-sidebar);
+    box-shadow: 3px 0 2px 0 var(--text-color);
 }
 
 .navbar__items img {
@@ -92,67 +136,124 @@ body {
 
 .navbar__items a {
     text-decoration: none;
-    color: #fff;
+    color: inherit;
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .items__account {
-    border-top: 1px solid #5d687e;
+    border-top: 1px solid var(--border-color);
     margin-top: auto;
+    padding-top: 1rem;
 }
 
+/* ==========================================
+   TOP MAIN NAVBAR (SEARCH & TOOLS)
+========================================== */
+.main__navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
 
-.deck__search input{
-    width: 400px;
-    height: 30px;
-    border-radius: 5px;
-    border: 2px solid #515b70;
-    padding: 0.5rem;
-    background-color: #384f79;
-    color: #fff;
+.deck__search input {
+    width: 350px;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    background-color: var(--bg-input);
+    color: var(--text-color);
+    outline: none;
 }
 
 .deck__search input::placeholder {
-    color: #fff;
+    color: var(--text-color);
 }
 
-.main__navbar {
+/* Bagian Kanan Navbar (Notifikasi & Mode Switcher) */
+.navbar__tools {
     display: flex;
-}
-
-.deck__mode {
-    display: flex;
-    justify-items: center;
     align-items: center;
-    gap: 1em;
-    padding: 0.2em;
-    border-radius: 13px;
-    /* background-color: #48cae4; */
+    margin-left: auto; /* Mendorong elemen ini mentok ke kanan */
+    gap: 1rem;
+}
+
+.deck__notification {
+    padding: 0.4em 0.5em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.deck__notification:hover {
+    background-color: var(--bg-input);
+    transform: scale(1.1);
+}
+
+.deck__notification img {
+    width: 24px;
+    height: auto;
 }
 
 .deck__mode {
-    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.25em;
+    border-radius: 20px;
+    background-color: var(--bg-input);
+    color: var(--text-color);
+    cursor: pointer;
 }
 
-/* 
-=========== DASHBOARD LAYOUT ==============
-*/
+.dark__mode, .light__mode {
+    padding: 0.4em 0.8em;
+    border-radius: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 0.9rem;
+}
 
+.mode--active {
+    background-color: var(--accent-color);
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* ==========================================
+   DASHBOARD LAYOUT (GRID CONTAINER)
+========================================== */
 .deck__container {
     flex: 1;
     display: grid;
-    margin-top: 1em;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 1em;
+    grid-template-rows: repeat(3, minmax(120px, 1fr));
+    gap: 1rem;
     grid-template-areas: 
-    "deck-1 deck-2 deck-3"
-    "deck-4 deck-5 deck-5"
-    "deck-6 deck-6 deck-7";
+        "deck-1 deck-2 deck-3"
+        "deck-4 deck-5 deck-5"
+        "deck-6 deck-6 deck-7";
 }
 
 .deck__content {
-    background-color: #48cae4;
-    border-radius: 10px;
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.deck__content:hover {
+    transform: translateY(-2px);
+}
+
+.deck__content span {
+    color: var(--text-color);
+    font-weight: 600;
 }
