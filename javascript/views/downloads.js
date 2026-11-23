@@ -1,4 +1,3 @@
-// javascript/views/downloads.js
 export function renderDownloads() {
     return `
         <div class="deck__content" style="grid-area: deck-1;">
