@@ -19,7 +19,6 @@
     --active-sidebar: #27475c;
 }
 
-/* Jika nanti di-switch ke Light Mode (Contoh implementasi) */
 body.light-mode {
     --bg-main: #f0f4f8;
     --bg-sidebar: #ffffff;
@@ -175,11 +174,10 @@ body {
     color: var(--text-color);
 }
 
-/* Bagian Kanan Navbar (Notifikasi & Mode Switcher) */
 .navbar__tools {
     display: flex;
     align-items: center;
-    margin-left: auto; /* Mendorong elemen ini mentok ke kanan */
+    margin-left: auto;
     gap: 1rem;
 }
 
