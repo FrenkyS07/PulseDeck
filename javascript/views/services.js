@@ -3,7 +3,7 @@ export function renderServices() {
         <div class="service__container">
             <nav class="services__navbar">
                 <div class="services__search">
-                    <input type="search" name="" id="servicesSearch" placeholder="Search server, files, or services...">
+                    <input type="search" name="" id="servicesSearch" placeholder="Search">
                 </div>
                 <div class="services__feature">
                     <div class="services_all services--active" data-filter="all"><span>All</span></div>
