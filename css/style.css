@@ -442,7 +442,7 @@ body {
     transform: scale(1.05);
 }
 
-.sevices__feature--active {
+.services--active {
     background-color: var(--accent-color);
     color: var(--text-dark);
     border-color: transparent;

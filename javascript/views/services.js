@@ -6,10 +6,10 @@ export function renderServices() {
                     <input type="search" name="" id="servicesSearch" placeholder="Search server, files, or services...">
                 </div>
                 <div class="services__feature">
-                    <div class="services_all services--active"><span>All</span></div>
-                    <div class="services__run"><span>Running</span></div>
-                    <div class="services__stop"><span>Stopped</span></div>
-                    <div class="services__mar"><span>Mar</span></div>
+                    <div class="services_all services--active" data-filter="all"><span>All</span></div>
+                    <div class="services__run" data-filter="running"><span>Running</span></div>
+                    <div class="services__stop" data-filter="stopped"><span>Stopped</span></div>
+                    <div class="services__mar" data-filter="mar"><span>Mar</span></div>
                     <div class="services__filter">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -256,4 +256,52 @@ export function renderServices() {
             </div>
         </div>
     `;
+}
+
+
+export function initServicesListeners() {
+    const filterButtons = document.querySelectorAll('.services__feature [data-filter]');
+    const searchInput = document.getElementById('servicesSearch');
+    const tableRows = document.querySelectorAll('.table__services tbody tr');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('services--active', 'sevices__feature--active'));
+            button.classList.add('services--active');
+
+            const filterValue = button.getAttribute('data-filter');
+
+            tableRows.forEach(row => {
+                const statusBadge = row.querySelector('.status-badge');
+                const statusText = statusBadge ? statusBadge.textContent.trim().toLowerCase() : '';
+
+                if (filterValue === 'all') {
+                    row.style.display = '';
+                } else if (filterValue === 'running' && statusText === 'online') {
+                    row.style.display = '';
+                } else if (filterValue === 'stopped' && statusText === 'offline') {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+
+            tableRows.forEach(row => {
+                const serviceNameEl = row.querySelector('.service-name-cell span');
+                const serviceName = serviceNameEl ? serviceNameEl.textContent.toLowerCase() : '';
+
+                if (serviceName.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    }
 }
