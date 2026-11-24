@@ -25,7 +25,7 @@ export function renderServices() {
                             <path d="M8 12H3" />
                         </svg>
                     </div>
-                    <div class="services__sort">
+                    <div class="services__sort" id="sortBtn" title="Sort by Name (A-Z)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="lucide lucide-funnel">
@@ -263,6 +263,10 @@ export function initServicesListeners() {
     const filterButtons = document.querySelectorAll('.services__feature [data-filter]');
     const searchInput = document.getElementById('servicesSearch');
     const tableRows = document.querySelectorAll('.table__services tbody tr');
+    const tableBody = document.querySelector('.table__services tbody');
+    const sortBtn = document.getElementById('sortBtn');
+
+    let isAscending = true;
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -302,6 +306,25 @@ export function initServicesListeners() {
                     row.style.display = 'none';
                 }
             });
+        });
+    }
+
+    if (sortBtn && tableBody) {
+        sortBtn.addEventListener('click', () => {
+            const rowsArray = Array.from(tableBody.querySelectorAll('tr'));
+
+            rowsArray.sort((rowA, rowB) => {
+                const nameA = rowA.querySelector('.service-name-cell span').textContent.trim().toLowerCase();
+                const nameB = rowB.querySelector('.service-name-cell span').textContent.trim().toLowerCase();
+
+                if (isAscending) {
+                    return nameA.localeCompare(nameB);
+                } else {
+                    return nameB.localeCompare(nameA);
+                }
+            });
+            isAscending = !isAscending;
+            rowsArray.forEach(row => tableBody.appendChild(row));
         });
     }
 }
