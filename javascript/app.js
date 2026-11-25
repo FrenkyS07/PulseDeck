@@ -1,7 +1,7 @@
 import { renderDashboard } from '../javascript/views/dashboard.js';
 import { renderDownloads, initDownloadsListeners } from '../javascript/views/downloads.js';
 import { renderServices, initServicesListeners } from '../javascript/views/services.js';
-import { renderMediaPlayer } from '../javascript/views/mediaPlayer.js';
+import { renderMediaPlayer, initMediaListeners } from '../javascript/views/mediaPlayer.js';
 import { renderStorage } from '../javascript/views/storage.js';
 import { renderAutomation } from '../javascript/views/automation.js';
 import { renderSetting } from '../javascript/views/setting.js';
@@ -63,6 +63,7 @@ function router() {
             break;
         case 'mediaPlayer':
             deckContainer.innerHTML = renderMediaPlayer();
+            initMediaListeners();
             break;
         case 'storage':
             deckContainer.innerHTML = renderStorage();
