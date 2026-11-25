@@ -95,7 +95,6 @@ export function initDownloadsListeners() {
     const searchInput = document.getElementById('downloadSearch');
     const tableRows = document.querySelectorAll('.table__download tbody tr');
 
-    // 1. Logika Filter Status (All, Downloading, Seeding, Paused)
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             filterButtons.forEach(btn => btn.classList.remove('download--active'));
@@ -118,7 +117,6 @@ export function initDownloadsListeners() {
         });
     });
 
-    // 2. Logika Real-time Search berdasarkan Nama File
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             const searchTerm = e.target.value.toLowerCase();
