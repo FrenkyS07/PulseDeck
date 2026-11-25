@@ -454,7 +454,9 @@ body {
 
 .container__download {
     display: flex;
+    flex-direction: column;
     width: 100%;
+    gap: 1rem;
 }
 
 .download__navbar, .download__feature {
@@ -496,4 +498,78 @@ body {
     background-color: var(--accent-color);
     color: var(--text-dark);
     border-color: transparent;
+}
+
+.download__content {
+    margin-top: 1rem;
+}
+
+.table__download {
+    background-color: var(--bg-card);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table__download table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.table__download th, 
+.table__download td {
+    padding: 1rem 1.2rem;
+    vertical-align: middle;
+}
+
+.table__download thead {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid var(--card-border);
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+.table__download tbody tr {
+    border-bottom: 1px solid var(--card-border);
+    transition: background-color 0.2s ease;
+}
+
+.table__download tbody tr:last-child {
+    border-bottom: none;
+}
+
+.table__download tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.table__download td:first-child {
+    max-width: 350px;       
+    white-space: nowrap;    
+    overflow: hidden;       
+    text-overflow: ellipsis;
+}
+
+.status--downloading {
+    background-color: rgba(72, 202, 228, 0.307);
+    color: #00b4d8;
+    border: 1px solid rgba(72, 202, 228, 0.500);
+}
+
+.status--paused {
+    background-color: rgba(148, 163, 184, 0.15);
+    color: #94a3b8;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.status--seeding {
+    background-color: rgba(74, 222, 128, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(74, 222, 128, 0.3);
 }
