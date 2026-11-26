@@ -1,8 +1,14 @@
 export function renderAutomation() {
     return `
-        <div class="deck__content" style="grid-area: deck-1;">
-            <h2>Downloads Page</h2>
-            <p>Daftar antrean unduhan media akan muncul di sini...</p>
+        <div class="automation__container>
+            <nav class="automation__navbar">
+                <button type="submit" class="automation__button automation__button--primary">Add Workflow</button>
+                <div class="automation__navbar-right" style="margin-left: auto; display: flex; gap: 0.5rem;">
+                    <button type="submit" class="automation__button">Run Flow</button>
+                    <button type="submit" class="automation__button">Import</button>
+                    <button type="submit" class="automation__button">Settings</button>
+                </div>
+            </nav>
         </div>
     `;
 }
