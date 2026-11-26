@@ -724,3 +724,225 @@ body {
 .media__box::-webkit-scrollbar-thumb:hover {
     background: var(--accent-color);
 }
+
+
+/* ==========================================
+   STORAGE LAYOUT
+========================================== */
+
+.storage__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-height: calc(100vh - 120px);
+    overflow: hidden;
+    gap: 1rem;
+}
+
+.storage__navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.storage__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    background-color: var(--bg-input);
+    color: var(--text-color);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+}
+
+.storage__button:hover {
+    background-color: var(--hover-sidebar);
+}
+
+.storage__button--primary {
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+}
+
+.storage__driveChart {
+    border: 1px solid var(--card-border);
+    background-color: var(--bg-card);
+    height: 150px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.storage__drive {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    flex: 1;
+}
+
+.drive__box {
+    border: 1px solid var(--card-border);
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    height: 90px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.drive__box:hover {
+    transform: translateY(-2px);
+    border-color: rgba(72, 202, 228, 0.4);
+}
+
+.drive__info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.drive__icon {
+    font-size: 1.8rem;
+    background-color: var(--bg-input);
+    padding: 0.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drive__details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.drive__name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.drive__status {
+    font-size: 0.8rem;
+    color: #4ade80;
+}
+
+.drive__meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-color);
+}
+
+.drive__options {
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 0.5rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.drive__options:hover {
+    opacity: 1;
+}
+
+.storage__drive::-webkit-scrollbar {
+    width: 8px;
+}
+.storage__drive::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+.storage__drive::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+.storage__driveChart {
+    border: 1px solid var(--card-border);
+    background-color: var(--bg-card);
+    height: 130px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chart__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.chart__percentage {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.chart__capacity-text {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.chart__progress-bar {
+    display: flex;
+    height: 10px;
+    width: 100%;
+    background-color: var(--bg-input);
+    border-radius: 5px;
+    overflow: hidden;
+    gap: 2px;
+}
+
+.progress__fill {
+    height: 100%;
+    border-radius: 3px;
+}
+
+.progress__media { background-color: #00b4d8; }
+.progress__system { background-color: #48cae4; }
+.progress__backups { background-color: #9d4edd; }
+
+.chart__legend {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--text-color);
+}
+
+.legend__item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.legend__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dot--media { background-color: #00b4d8; }
+.dot--system { background-color: #48cae4; }
+.dot--backups { background-color: #9d4edd; }
