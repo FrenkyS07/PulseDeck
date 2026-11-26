@@ -10,5 +10,23 @@ export function renderAutomation() {
                 </div>
             </nav>
         </div>
+        <div class="automation__canvas">
+            <div class="workflow__row">
+                <div class="workflow__node"> Time Trigger</div>
+                <div class="workflow__line"></div>
+                <div class="workflow__node"> Check CPU</div>
+                <div class="workflow__line"></div>
+                <div class="workflow__node"> Send Notification</div>
+            </div>
+            <div class="workflow__row" style="margin-top: 1.5rem;">
+                <div class="workflow__node"> Time Trigger</div>
+                <div class="workflow__line"></div>
+                <div class="workflow__node"> Check CPU</div>
+                <div class="workflow__line"></div>
+                <div class="workflow__node workflow__node--warning">⚡ Restart Service</div>
+                <div class="workflow__line"></div>
+                <div class="workflow__node workflow__node--warning">⚡ Restart Service</div>
+            </div>
+        </div>
     `;
 }
