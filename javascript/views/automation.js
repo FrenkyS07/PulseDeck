@@ -87,3 +87,24 @@ export function renderAutomation() {
         </div>
     `;
 }
+
+export function initAutomationListeners() {
+    const searchInput = document.getElementById('automationSearch');
+    const tableRows = document.querySelectorAll('.table__automation tbody tr');
+
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+
+            tableRows.forEach(row => {
+                const rowText = row.textContent.toLowerCase();
+
+                if (rowText.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    }
+}

@@ -3,7 +3,7 @@ import { renderDownloads, initDownloadsListeners } from '../javascript/views/dow
 import { renderServices, initServicesListeners } from '../javascript/views/services.js';
 import { renderMediaPlayer, initMediaListeners } from '../javascript/views/mediaPlayer.js';
 import { renderStorage } from '../javascript/views/storage.js';
-import { renderAutomation } from '../javascript/views/automation.js';
+import { renderAutomation, initAutomationListeners } from '../javascript/views/automation.js';
 import { renderSetting } from '../javascript/views/setting.js';
 
 const modeContainer = document.querySelector('.deck__mode');
@@ -70,6 +70,7 @@ function router() {
             break;
         case 'automation':
             deckContainer.innerHTML = renderAutomation();
+            initAutomationListeners();
             break;
         case 'setting':
             deckContainer.innerHTML = renderSetting();
