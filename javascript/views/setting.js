@@ -50,13 +50,6 @@ export function renderSetting() {
                                 <option>°F</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label>Theme</label>
-                            <div class="theme__switch-box" id="themeSwitchBox">
-                                <div class="theme__option theme--selected" data-theme="light">☀️ Light</div>
-                                <div class="theme__option" data-theme="dark">🌙 Dark</div>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="setting__card">
@@ -149,7 +142,6 @@ export function renderSetting() {
 export function initSettingListeners() {
     const navItems = document.querySelectorAll('.setting__nav-item');
     const panels = document.querySelectorAll('.setting__panel');
-    const themeOptions = document.querySelectorAll('.theme__option');
 
     navItems.forEach(item => {
         item.addEventListener('click', () => {
@@ -164,13 +156,6 @@ export function initSettingListeners() {
                     panel.classList.remove('setting__panel--active');
                 }
             });
-        });
-    });
-
-    themeOptions.forEach(opt => {
-        opt.addEventListener('click', () => {
-            themeOptions.forEach(o => o.classList.remove('theme--selected'));
-            opt.classList.add('theme--selected');
         });
     });
 }

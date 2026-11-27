@@ -4,7 +4,7 @@ import { renderServices, initServicesListeners } from '../javascript/views/servi
 import { renderMediaPlayer, initMediaListeners } from '../javascript/views/mediaPlayer.js';
 import { renderStorage } from '../javascript/views/storage.js';
 import { renderAutomation, initAutomationListeners } from '../javascript/views/automation.js';
-import { renderSetting } from '../javascript/views/setting.js';
+import { renderSetting, initSettingListeners } from '../javascript/views/setting.js';
 
 const modeContainer = document.querySelector('.deck__mode');
 const darkModeBtn = document.querySelector('.dark__mode');
@@ -74,6 +74,7 @@ function router() {
             break;
         case 'setting':
             deckContainer.innerHTML = renderSetting();
+            initSettingListeners();
             break;
         default:
             deckContainer.innerHTML = '<h2>404 Page Not Found</h2>';
